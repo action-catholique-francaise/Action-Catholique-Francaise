@@ -20,14 +20,13 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            justify-content: space-between;
-            text-align: center;
         }
         header {
             background: linear-gradient(135deg, #1b3b6f, #218380);
             color: white;
-            padding: 2.5rem 1rem;
+            padding: 2.5rem 1rem 1rem 1rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
         }
         header h1 {
             font-size: 2.5rem;
@@ -38,12 +37,59 @@
         header p {
             font-size: 1.1rem;
             opacity: 0.9;
+            margin-bottom: 1.5rem;
         }
+
+        /* Styles des Onglets de Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+        .tab-btn.active {
+            background: #f7f9fc;
+            color: #1b3b6f;
+        }
+
         main {
-            padding: 3rem 1rem;
+            padding: 2.5rem 1rem;
             flex: 1;
             max-width: 900px;
             margin: 0 auto;
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Contenu Onglet 1 (Accueil) */
+        .text-center {
+            text-align: center;
         }
         .image-container {
             background: white;
@@ -62,6 +108,7 @@
         }
         .icon-section {
             margin: 1.5rem 0;
+            text-align: center;
         }
         .page-cross-icon {
             width: 50px;
@@ -74,9 +121,10 @@
             color: #4a5568;
             margin-top: 1rem;
             font-weight: 500;
+            text-align: center;
         }
-        
-        /* Style du Compte à rebours */
+
+        /* Compte à Rebours */
         .countdown-box {
             background: white;
             border: 2px solid #e2e8f0;
@@ -84,6 +132,7 @@
             padding: 1.5rem 1rem;
             margin-top: 2.5rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
         }
         .countdown-title {
             font-size: 1.1rem;
@@ -118,56 +167,247 @@
             opacity: 0.85;
         }
 
+        /* Style Onglet 2 (Bienvenue) */
+        .welcome-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            text-align: justify;
+            line-height: 1.8;
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+        .welcome-card p {
+            margin-bottom: 1.2rem;
+        }
+
+        /* Signature officielle */
+        .signature-box {
+            display: flex;
+            align-items: center;
+            border-right: 4px solid #f97316;
+            padding: 1rem 1.5rem;
+            margin-top: 2.5rem;
+            background: #fafafa;
+            border-radius: 8px;
+            gap: 20px;
+        }
+        .signature-cross {
+            width: 60px;
+            height: auto;
+        }
+        .signature-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .signature-info strong {
+            font-size: 1.1rem;
+            color: #1a202c;
+        }
+        .signature-info a {
+            color: #2563eb;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .signature-info .site-link {
+            color: #ea580c;
+            font-weight: 600;
+        }
+
+        /* Formulaire de Contact */
+        .contact-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-top: 3rem;
+        }
+        .contact-section h2 {
+            color: #1b3b6f;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .contact-section p {
+            color: #718096;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #218380;
+            box-shadow: 0 0 0 3px rgba(33, 131, 128, 0.15);
+        }
+        .submit-btn {
+            background: #1b3b6f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background: #218380;
+        }
+
         footer {
             background-color: #1a202c;
             color: #a0aec0;
             padding: 1.5rem;
             font-size: 0.9rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .signature-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 id="site-title">Action Catholique Française</h1>
+        <h1>Action Catholique Française</h1>
         <p>Bienvenue sur notre site officiel</p>
+        
+        <!-- Barre de Navigation des Onglets -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'tab-accueil')">Accueil</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-bienvenue')">Bienvenue dans l'Action catholique française</button>
+        </nav>
     </header>
 
     <main>
-        <div class="image-container">
-            <img src="croix 1.jpg" alt="Action Catholique Française" class="main-img">
-        </div>
+        <!-- CONTENU ONGLET 1 : ACCUEIL -->
+        <div id="tab-accueil" class="tab-content active text-center">
+            <div class="image-container">
+                <img src="croix 1.jpg" alt="Action Catholique Française" class="main-img">
+            </div>
 
-        <div class="icon-section">
-            <img src="Croix icône.png" alt="Croix Catholique" class="page-cross-icon">
-        </div>
+            <div class="icon-section">
+                <img src="Croix icône.png" alt="Croix Catholique" class="page-cross-icon">
+            </div>
 
-        <p class="welcome-text">
-            Ce site web est destiné à des personnes catholiques en recherche du meilleur candidat pour les élections présidentielles françaises de 2027.
-        </p>
+            <p class="welcome-text">
+                Ce site web est destiné à des personnes catholiques en recherche du meilleur candidat pour les élections présidentielles françaises de 2027.
+            </p>
 
-        <!-- Section du Compte à Rebours -->
-        <div class="countdown-box">
-            <div class="countdown-title">Ouverture du 1<sup>er</sup> tour de l'élection présidentielle 2027</div>
-            <div class="countdown">
-                <div class="time-block">
-                    <span class="number" id="days">00</span>
-                    <span class="label">Jours</span>
-                </div>
-                <div class="time-block">
-                    <span class="number" id="hours">00</span>
-                    <span class="label">Heures</span>
-                </div>
-                <div class="time-block">
-                    <span class="number" id="minutes">00</span>
-                    <span class="label">Minutes</span>
-                </div>
-                <div class="time-block">
-                    <span class="number" id="seconds">00</span>
-                    <span class="label">Secondes</span>
+            <div class="countdown-box">
+                <div class="countdown-title">Ouverture du 1<sup>er</sup> tour de l'élection présidentielle 2027</div>
+                <div class="countdown">
+                    <div class="time-block">
+                        <span class="number" id="days">00</span>
+                        <span class="label">Jours</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="number" id="hours">00</span>
+                        <span class="label">Heures</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="number" id="minutes">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="number" id="seconds">00</span>
+                        <span class="label">Secondes</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- CONTENU ONGLET 2 : BIENVENUE DANS L'ACTION CATHOLIQUE FRANÇAISE -->
+        <div id="tab-bienvenue" class="tab-content">
+            <div class="welcome-card">
+                <p>Cher Messieurs , chères mesdames,</p>
+                <p>Faisant partie, comme nous de la communauté catholique de France, nous avons comme priorité de maintenir la foi dans le cœur des Français, notre pays étant avant tout la fille aînée de l'Eglise comme nous l'a précisé notre saint Jean-Paul II.</p>
+                <p>Or comme vous le savez, un tournant majeur pour la France se déroulera dans quelques mois à peine, il s'agit, bien entendu, des élections présidentielles de 2027. Suite à cet évènement, un nouveau président sera élu et ce sera alors, à lui ; comme le fait en ce moment même notre président actuel Monsieur Macron, de protéger notre beau pays et de le faire rayonner aux 4 coins du monde. Or notre beau pays est d'appartenance laïque et ce n'est malheureusement plus la priorité des partis de placer la France sous la sainte protection du seigneur et le la conduire sous les directives du Christ es des Evangiles. Nous devons alors élire le nouveau président avec sagesse. En effet les temps sont durs en France et malheureusement la population se tourne majoritairement vers l'athéisme et les plaisirs obscènes et ne désire plus suivre le Christ. Il nous faut donc un président qui souhaite faire la volonté du Christ et conserver cet héritage chrétien transmis par les apôtres. Ceci, afin que par la grâce de Dieu la France se relève et aille de l’avant. Aucun des partis se présentant n’ayant proclamé d’appartenance chrétienne sous pouvons néanmoins vous suggérer quelques pistes, mais le choix du vote revient et totalement à vous ; la liberté d'expression étant un principe fondamental de notre démocratie.</p>
+                <p>Durant ce temps de campagne présidentielle, vous recevrez plusieurs e-mails détaillant les discordances et les corrélations entre la vision de l'Eglise catholique et les différents partis. Néanmoins, ce sera à vous de mettre le papier dans l'urne!</p>
+                <p>En vous souhaitant une agréable journée,</p>
+
+                <!-- Bloc Signature -->
+                <div class="signature-box">
+                    <img src="Croix icône.png" alt="Croix" class="signature-cross">
+                    <div class="signature-info">
+                        <strong>Action Catholique Française</strong>
+                        <span>E: <a href="mailto:action.catholique.française@gmail.com">action.catholique.française@gmail.com</a></span>
+                        <span class="site-link">action-catholique-francaise.github.io/Action-Catholique-Francaise/</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ZONE DE CONTACT (FORMULAIRE DE MAIL OBLIGATOIRE) -->
+        <section class="contact-section">
+            <h2>Nous contacter</h2>
+            <p>Envoyez-nous un message directement à action.catholique.française@gmail.com</p>
+
+            <form action="https://formspree.io/f/action.catholique.française@gmail.com" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Adresse e-mail *</label>
+                    <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Envoyer le message</button>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -175,7 +415,23 @@
     </footer>
 
     <script>
-        // Date cible du 1er tour : 18 Avril 2027 à 08:00
+        // Gestion du basculement entre les onglets
+        function openTab(evt, tabId) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            const tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Script du compte à rebours (18 Avril 2027)
         const electionDate = new Date("April 18, 2027 08:00:00").getTime();
 
         function updateCountdown() {
@@ -198,7 +454,6 @@
             document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
         }
 
-        // Mise à jour chaque seconde
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
