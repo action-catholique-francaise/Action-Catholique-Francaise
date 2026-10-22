@@ -312,7 +312,7 @@
         <h1>Action Catholique Française</h1>
         <p>Bienvenue sur notre site officiel</p>
         
-        <!-- Barre de Navigation des Onglets -->
+        <!-- Navigation des Onglets -->
         <nav class="nav-tabs">
             <button class="tab-btn active" onclick="openTab(event, 'tab-accueil')">Accueil</button>
             <button class="tab-btn" onclick="openTab(event, 'tab-bienvenue')">Bienvenue dans l'Action catholique française</button>
@@ -320,7 +320,7 @@
     </header>
 
     <main>
-        <!-- CONTENU ONGLET 1 : ACCUEIL -->
+        <!-- ONGLET 1 : ACCUEIL -->
         <div id="tab-accueil" class="tab-content active text-center">
             <div class="image-container">
                 <img src="croix 1.jpg" alt="Action Catholique Française" class="main-img">
@@ -357,7 +357,7 @@
             </div>
         </div>
 
-        <!-- CONTENU ONGLET 2 : BIENVENUE DANS L'ACTION CATHOLIQUE FRANÇAISE -->
+        <!-- ONGLET 2 : BIENVENUE -->
         <div id="tab-bienvenue" class="tab-content">
             <div class="welcome-card">
                 <p>Cher Messieurs , chères mesdames,</p>
@@ -371,19 +371,20 @@
                     <img src="Croix icône.png" alt="Croix" class="signature-cross">
                     <div class="signature-info">
                         <strong>Action Catholique Française</strong>
-                        <span>E: <a href="mailto:action.catholique.française@gmail.com">action.catholique.française@gmail.com</a></span>
+                        <span>E: <a href="mailto:action.catholique.francaise@gmail.com">action.catholique.francaise@gmail.com</a></span>
                         <span class="site-link">action-catholique-francaise.github.io/Action-Catholique-Francaise/</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ZONE DE CONTACT (FORMULAIRE DE MAIL OBLIGATOIRE) -->
+        <!-- FORMULAIRE DE CONTACT -->
         <section class="contact-section">
             <h2>Nous contacter</h2>
-            <p>Envoyez-nous un message directement à action.catholique.française@gmail.com</p>
+            <p>Envoyez-nous un message directement à action.catholique.francaise@gmail.com</p>
 
-            <form action="https://formspree.io/f/action.catholique.française@gmail.com" method="POST">
+            <!-- N'oubliez pas de remplacer VOTRE_CODE_FORMSPREE par l'identifiant fourni lors de la création de votre formulaire Formspree -->
+            <form action="https://formspree.io/f/VOTRE_CODE_FORMSPREE" method="POST">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="nom">Nom *</label>
@@ -415,7 +416,6 @@
     </footer>
 
     <script>
-        // Gestion du basculement entre les onglets
         function openTab(evt, tabId) {
             const tabContents = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabContents.length; i++) {
@@ -431,7 +431,6 @@
             evt.currentTarget.classList.add("active");
         }
 
-        // Script du compte à rebours (18 Avril 2027)
         const electionDate = new Date("April 18, 2027 08:00:00").getTime();
 
         function updateCountdown() {
